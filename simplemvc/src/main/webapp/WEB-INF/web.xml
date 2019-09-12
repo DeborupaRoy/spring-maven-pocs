@@ -1,0 +1,36 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+     <display-name>LOGIN</display-name>
+     <welcome-file-list>
+        <welcome-file>Login.jsp</welcome-file>
+    </welcome-file-list>
+    <filter>
+    <filter-name>AddFieldFilter</filter-name> <!-- mandatory -->
+	  <filter-class>edu.deborupa.spring.controller.AddFieldFilter</filter-class>
+    </filter>
+	<filter-mapping>
+	  <filter-name>AddFieldFilter</filter-name> <!-- mandatory -->
+	  <url-pattern>/AddFieldFilter</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+	  <servlet-name>LoginServlet</servlet-name>
+	  <dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>edu.deborupa.spring.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>LogoutServlet</servlet-name>
+    	<servlet-class>edu.deborupa.spring.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
