@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>FORMS IN SPRING MVC</display-name>
+  
+  <filter>
+    <filter-name>AccessControlFilter</filter-name> <!-- mandatory -->
+	  <filter-class>edu.deborupa.spring.Controller.AccessControlFilter</filter-class>
+    </filter>
+	<filter-mapping>
+	  <filter-name>AccessControlFilter</filter-name> <!-- mandatory -->
+	   <url-pattern>/PAGE1/*</url-pattern> <!--  either url-pattern or servlet-name is mandatory -->
+	   <url-pattern>/PAGE2/*</url-pattern>
+	   <url-pattern>/PAGE3/*</url-pattern>
+	  <!-- <servlet-name>AccessControlWeb</servlet-name>-->
+	  <dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+    
+	
+  <servlet>
+      <servlet-name>AccessControlWeb</servlet-name>
+      <servlet-class>
+         org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>AccessControlWeb</servlet-name>
+      <url-pattern>/</url-pattern>
+   </servlet-mapping>
+   
+   
+</web-app>
+
+
+
+ 
+ 

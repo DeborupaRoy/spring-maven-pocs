@@ -1,0 +1,12 @@
+.project
+.metadata
+local.properties
+.classpath
+.settings/
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.#
+*.class
+*.log
